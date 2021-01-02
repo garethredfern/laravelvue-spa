@@ -1,6 +1,6 @@
 ---
 title: Introduction
-description: ""
+description: "A step by step resource on how to build a Laravel API which has a Vue SPA to consume it's data."
 position: 1
 category: "Getting Started"
 fullscreen: true

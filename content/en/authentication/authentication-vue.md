@@ -1,6 +1,6 @@
 ---
 title: "Authentication - Vue"
-description: "How to set up full authentication using Laravel Sanctum & Fortify in a Vue SPA. Vue SPA Article"
+description: "How to set up full authentication using Laravel Sanctum & Fortify in a Vue SPA. Vue SPA documentation."
 category: Authentication
 position: 2
 menuTitle: "Vue"
