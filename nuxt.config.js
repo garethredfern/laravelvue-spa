@@ -4,5 +4,14 @@ export default theme({
   docs: {
     primaryColor: "#d53f8c",
   },
-  buildModules: ["vue-plausible"],
+  head: {
+    script: [
+      {
+        async: true,
+        defer: true,
+        "data-domain": "laravelvuespa.com",
+        src: "https://plausible.io/js/plausible.js",
+      },
+    ],
+  },
 });
