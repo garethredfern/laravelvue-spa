@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@nuxt/content-theme-docs": "^0.8.0",
-    "nuxt": "^2.14.7"
+    "nuxt": "^2.14.7",
+    "vue-plausible": "^1.1.1"
   }
 }

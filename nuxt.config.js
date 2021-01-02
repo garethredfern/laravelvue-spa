@@ -4,4 +4,5 @@ export default theme({
   docs: {
     primaryColor: "#d53f8c",
   },
+  buildModules: ["vue-plausible"],
 });
