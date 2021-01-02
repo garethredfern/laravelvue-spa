@@ -1,0 +1,10 @@
+{
+  "title": "Build a Laravel Vue Spa",
+  "url": "https://laravelvuespa.com",
+  "logo": {
+    "light": "/logo-light.svg",
+    "dark": "/logo-dark.svg"
+  },
+  "github": "garethredfern/laravelvue-spa",
+  "twitter": "garethredfern"
+}
