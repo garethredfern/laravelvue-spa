@@ -1,5 +1,5 @@
 ---
-title: "Authentication - Vue"
+title: "Authentication - Vue SPA"
 description: "How to set up full authentication using Laravel Sanctum & Fortify in a Vue SPA. Vue SPA documentation."
 category: Authentication
 position: 2

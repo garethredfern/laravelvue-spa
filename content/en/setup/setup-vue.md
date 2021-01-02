@@ -1,5 +1,5 @@
 ---
-title: Setup Vue
+title: Setup Vue SPA
 description: "How to set up a Vue SPA that uses Laravel as an API."
 position: 2
 category: "Getting Started"
