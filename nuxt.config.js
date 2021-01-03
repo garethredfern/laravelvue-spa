@@ -1,4 +1,5 @@
 import theme from "@nuxt/content-theme-docs";
+import getRoutes from "./utils/getRoutes";
 
 export default theme({
   docs: {
@@ -13,5 +14,12 @@ export default theme({
         src: "https://plausible.io/js/plausible.js",
       },
     ],
+  },
+  buildModules: ["@nuxtjs/sitemap"],
+  sitemap: {
+    hostname: process.env.BASE_URL,
+    routes() {
+      return getRoutes();
+    },
   },
 });

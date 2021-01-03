@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@nuxt/content-theme-docs": "^0.8.0",
+    "@nuxtjs/sitemap": "^2.4.0",
     "nuxt": "^2.14.7"
   }
 }
