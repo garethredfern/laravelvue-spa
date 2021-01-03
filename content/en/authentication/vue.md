@@ -8,7 +8,7 @@ menuTitle: "Vue"
 
 ### Auth Endpoints & CORS
 
-First set up the [Auth Services File](https://github.com/garethredfern/laravel-vue/blob/main/src/services/AuthService.js) to keep all the API Auth endpoints in one place. The methods in this file interact with the Fortify endpoints we have [previously set up](/authentication/authentication-laravel#setting-up-fortify). At the top of the file Axios is imported to handle the data fetching from our API.
+First set up the [Auth Services File](https://github.com/garethredfern/laravel-vue/blob/main/src/services/AuthService.js) to keep all the API Auth endpoints in one place. The methods in this file interact with the Fortify endpoints we have [previously set up](/authentication/laravel#setting-up-fortify). At the top of the file Axios is imported to handle the data fetching from our API.
 
 An important note is that you must set the following in the axios create method:
 
@@ -122,7 +122,7 @@ Here is a breakdown of each of the Vue components and views that are used for ha
 #### Email Verification
 
 - [Verify Email Component](https://github.com/garethredfern/laravel-vue/blob/main/src/components/VerifyEmail.vue)
-  Laravel provides the ability for a user to verify their email as an added layer of security. This component works with the /email/verification-notification endpoint. To get the email notification working, there is some set-up required within the Laravel API. More detail in these [instructions](/articles/authentication-laravel-sanctum-fortify-for-an-spa#email-verification).
+  Laravel provides the ability for a user to verify their email as an added layer of security. This component works with the /email/verification-notification endpoint. To get the email notification working, there is some set-up required within the Laravel API. More detail in these [instructions](/authentication/laravel#email-verification).
 
 With this in place, the SPA will check a user is verified using the details in the auth Vuex store. If they are not, a button is displayed, when clicked the verification email will be sent by Laravel. The email will have a link to verify and return the user back to the SPA dashboard.
 
