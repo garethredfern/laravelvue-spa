@@ -90,11 +90,11 @@ Here is a breakdown of each of the Vue components and views that are used for ha
 
 The registration component allows users to sign up for an account if they don’t have one. It works with the Fortify /register endpoint. It only works when a user is not logged in, you can’t use it for adding users if you are logged in. To add users through an admin screen we would need to create another API endpoint and alter this component to post to that too. For now, it’s kept simply to register new users. Once a user is registered successfully they are automatically logged in and redirected to the dashboard.
 
-#### Login View
+#### Login Component
 
-[View file on Github](https://github.com/garethredfern/laravel-vue/blob/main/src/views/Login.vue)
+[View file on Github](https://github.com/garethredfern/laravel-vue/blob/main/src/components/LoginForm.vue)
 
-The login view displays the standard login form which works with the Fortify /login endpoint. Notice that all the endpoints are kept in the AuthService file which is imported into each view/component. Once a user logs in successfully, they are redirected to the dashboard.
+The login form works with the Fortify /login endpoint. Notice that all the endpoints are kept in the AuthService file which is imported into each view/component. Once a user logs in successfully, they are redirected to the dashboard.
 
 #### Logout Component
 
