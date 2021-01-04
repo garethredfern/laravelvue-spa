@@ -100,13 +100,13 @@ The login form works with the Fortify /login endpoint. Notice that all the endpo
 
 [View file on Github](https://github.com/garethredfern/laravel-vue/blob/main/src/components/Logout.vue)
 
-A simple component which works with the Fortify /logout endpoint. When a user is logged out, the [action](https://github.com/garethredfern/laravel-vue/blob/main/src/store/modules/auth.js#L32) is dispatched clearing the user from the Vuex state and redirects to the login view.
+A simple component which works with the Fortify /logout endpoint. When a user is logged out, the `auth/logout` action is dispatched clearing the user from the Vuex state and redirects to the login view.
 
 #### Dashboard View (Protected Route)
 
 [View file on Github](https://github.com/garethredfern/laravel-vue/blob/main/src/views/Dashboard.vue)
 
-This view has the `requiresAuth` Boolean set true in the [router file](https://github.com/garethredfern/laravel-vue/blob/main/src/router/index.js#L14), it displays the auth user details and a password update component. A dashboard could display much more but the takeaway here is that it is protected. A user must be logged in to see it.
+This view has the `requiresAuth` Boolean set true in the router file `meta: { requiresAuth: true }`, it displays the auth user details and a password update component. A dashboard could display much more but the takeaway here is that it is protected. A user must be logged in to see it.
 
 #### Forgot Password View
 
