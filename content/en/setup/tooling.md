@@ -1,6 +1,6 @@
 ---
 title: "Test API Endpoints with Insomnia or Postman"
-description: ""
+description: "Testing your API endpoints to see what is returned is an essential part of building a Laravel API, here's how to use Insomnia or Postman."
 position: 3
 category: Getting Started
 menuTitle: "Tooling"
@@ -11,7 +11,7 @@ To test the API whilst building all its endpoints and data fetching functionalit
 Both Insomnia and Postman should enable you to interact with Sanctum using cookies and sessions in the same way as the SPA does. It is much simpler to create a token endpoint which returns a Bearer token to use whilst interacting with the API locally. **Do not use this method authenticating your SPA** cookies and sessions are the preferred and more secure method in production. For testing locally a Bearer token is nice and simple and works well.
 
 ### Add HasApiTokens Trait to User Model
-To begin issuing tokens for users, your User model should use the LaravelSanctumHasApiTokens trait:
+To begin issuing tokens for users, your User model should use the `LaravelSanctumHasApiTokens` trait:
 
 ```php
 use Laravel\Sanctum\HasApiTokens;
