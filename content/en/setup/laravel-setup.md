@@ -46,6 +46,16 @@ sail composer require laravel/sanctum
 sail artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
 ```
 
+Sanctum needs some specific set up to enable it to work with a separate SPA. First lets add the following in your .env file:
+
+```bash
+SANCTUM_STATEFUL_DOMAINS=localhost:8080
+SPA_URL=http://localhost:8080
+SESSION_DOMAIN=localhost
+```
+
+The stateful domain tells Sanctum which domain you are using for the SPA. You can find the full notes and config for this in the config/sanctum.php file. As we are using cookies and sessions for authentication you need to add a session domain. This determines which domain the cookie is available to in your application. Full notes can be found in the config/session.php file and the [official documentation](https://laravel.com/docs/8.x/sanctum#spa-authentication).
+
 Add Sanctum's middleware to your api middleware group within your application's app/Http/Kernel.php file:
 
 ```php
