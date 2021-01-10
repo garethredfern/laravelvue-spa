@@ -18,7 +18,7 @@ The example project files can be found on Github:
 - [Larvel API](https://github.com/garethredfern/laravel-api)
 - [Vue SPA](https://github.com/garethredfern/laravel-vue)
 
-To see what you will be building, create an account at [https://laravelvuespa.app](https://laravelvuespa.app/) where you can play around with the demo application.
+To see what you will be building, create an account at [laravelvuespa.app](https://laravelvuespa.app/) where you can play around with the demo application.
 
 I want to keep growing this resource and provide a full set of documentation/videos on how to build Vue & Nuxt SPA's with a Laravel API. The plan is to release weekly updates until all areas of building an API and SPA are covered.
 

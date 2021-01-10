@@ -2,7 +2,7 @@
 title: "Authentication - Laravel API"
 description: "How to set up full authentication using Laravel Sanctum & Fortify in a Vue SPA. Laravel API documentation."
 category: Authentication
-position: 6
+position: 7
 menuTitle: "Laravel"
 ---
 
