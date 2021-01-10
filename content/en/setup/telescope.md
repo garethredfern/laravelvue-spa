@@ -1,14 +1,15 @@
 ---
 title: "Test API Endpoints with Telescope"
 description: "Testing your API endpoints to see what is returned is an essential part of building a Laravel API, here's how to use Telescope."
-position: 4
-category: Getting Started
+position: 5
+category: "Getting Started"
 menuTitle: "Telescope"
 ---
 
 Laravel has a first party package called [Telescope](https://laravel.com/docs/8.x/telescope). It provides insight into the requests coming into your application, exceptions, log entries, and a lot more. For any Laravel development you will find it an essential tool to have in your belt.
 
 ### Installing Telescope
+
 You can use Composer to install Telescope into your Laravel project:
 
 ```bash

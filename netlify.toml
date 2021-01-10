@@ -1,0 +1,23 @@
+[build]
+  publish = "dist"
+  command = "npm run generate"
+[[redirects]]
+  from = "/setup/laravel"
+  to = "/setup/laravel-setup"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/setup/vue"
+  to = "/setup/vue-setup"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/authentication/laravel"
+  to = "/authentication/laravel-auth"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/authentication/vue"
+  to = "/authentication/vue-auth"
+  status = 301
+  force = true

@@ -2,7 +2,7 @@
 title: "Update the Authenticated User Details"
 description: "How to update a users details in a Vue Spa with a Laravel API using Fortify."
 category: Authentication
-position: 3
+position: 8
 menuTitle: "Update User"
 ---
 

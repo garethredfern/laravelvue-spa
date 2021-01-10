@@ -1,7 +1,7 @@
 ---
 title: Setup Vue SPA
 description: "How to set up a Vue SPA that uses Laravel as an API."
-position: 2
+position: 3
 category: "Getting Started"
 menuTitle: "Setup Vue"
 fullscreen: true

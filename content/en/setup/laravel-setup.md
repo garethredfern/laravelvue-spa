@@ -1,8 +1,8 @@
 ---
 title: Setup Laravel API
 description: "How to set up Laravel Sanctum and Fortify for use as a headless API."
-position: 1
-category: Getting Started
+position: 2
+category: "Getting Started"
 menuTitle: "Setup Laravel"
 ---
 

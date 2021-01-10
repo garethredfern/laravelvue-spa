@@ -2,7 +2,7 @@
 title: "Authentication - Laravel API"
 description: "How to set up full authentication using Laravel Sanctum & Fortify in a Vue SPA. Laravel API documentation."
 category: Authentication
-position: 1
+position: 6
 menuTitle: "Laravel"
 ---
 
@@ -33,7 +33,7 @@ While you are in the config/cors.php file set the following:
 'supports_credentials' => true,
 ```
 
-The above ensures you have the `Access-Control-Allow-Credentials` header with a value of `True` set. You can read more about this in the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials). We will be passing this header via the SPA but [more on that when we move to set it up](/setup/vue).
+The above ensures you have the `Access-Control-Allow-Credentials` header with a value of `True` set. You can read more about this in the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials). We will be passing this header via the SPA but [more on that when we move to set it up](/setup/vue-setup).
 
 ### Setting Up Fortify
 
@@ -120,7 +120,7 @@ ResetPassword::createUrlUsing(function ($user, string $token) {
 });
 ```
 
-To make this all work we will need to have a reset-password view in the SPA which handles the token and passes back the users new password. This is explained in [the creating of the SPA article](/authentication/vue), you can review the code on [Github](https://github.com/garethredfern/laravel-vue/blob/main/src/views/ResetPassword.vue).
+To make this all work we will need to have a reset-password view in the SPA which handles the token and passes back the users new password. This is explained in [the creating of the SPA article](/authentication/vue-auth), you can review the code on [Github](https://github.com/garethredfern/laravel-vue/blob/main/src/views/ResetPassword.vue).
 
 ### API Routes
 

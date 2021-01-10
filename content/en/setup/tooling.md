@@ -1,8 +1,8 @@
 ---
 title: "Test API Endpoints with Insomnia or Postman"
 description: "Testing your API endpoints to see what is returned is an essential part of building a Laravel API, here's how to use Insomnia or Postman."
-position: 3
-category: Getting Started
+position: 4
+category: "Getting Started"
 menuTitle: "Tooling"
 ---
 
@@ -11,6 +11,7 @@ To test the API whilst building all its endpoints and data fetching functionalit
 Both Insomnia and Postman should enable you to interact with Sanctum using cookies and sessions in the same way as the SPA does. It is much simpler to create a token endpoint which returns a Bearer token to use whilst interacting with the API locally. **Do not use this method authenticating your SPA** cookies and sessions are the preferred and more secure method in production. For testing locally a Bearer token is nice and simple and works well.
 
 ### Add HasApiTokens Trait to User Model
+
 To begin issuing tokens for users, your User model should use the `LaravelSanctumHasApiTokens` trait:
 
 ```php
@@ -23,6 +24,7 @@ class User extends Authenticatable
 ```
 
 ### Token Controller
+
 Create a `TokenController` either using the artisan command or by creating the file manually. The code to generate the token is taken directly from the [Sanctum documentation](https://laravel.com/docs/8.x/sanctum#issuing-mobile-api-tokens) accept returning a json response with the token set in a token variable.
 
 ```php
@@ -57,6 +59,7 @@ class TokenController extends Controller
 ```
 
 ### Token API Endpoint
+
 In your api routes file add the endpoint used to fetch a token:
 
 ```php
@@ -69,15 +72,16 @@ To log in an receive a token you will need to send your login details and device
 
 ```json
 {
-	"email": "luke@jedi.com",
-	"password": "password",
-	"device_name": "insomnia"
+  "email": "luke@jedi.com",
+  "password": "password",
+  "device_name": "insomnia"
 }
 ```
 
 Once you have successfully logged in you will need to send the Bearer token with every request to the API. You can save the Bearer token in an environment variable for convenience. [Here’s how to do it with Insomnia](https://stackoverflow.com/questions/54925915/insomnia-using-oath2-0-how-do-i-pull-the-access-token-into-a-variable).
 
 ### Test Endpoints & Request Headers
+
 Make sure to send the `Bearer` token and `Accept: Application JSON` in the header for each request. Access the authenticated users details by sending a GET request:
 
 ```bash
@@ -102,5 +106,6 @@ If everything has worked you should receive a response like this:
 Additional endpoints can be built then tested in a similar way.
 
 ### Useful Links
+
 - [Saving Environment Variables Insomnia](https://stackoverflow.com/questions/54925915/insomnia-using-oath2-0-how-do-i-pull-the-access-token-into-a-variable)
 - [Laravel Sanctum with Postman](https://blog.codecourse.com/laravel-sanctum-airlock-with-postman/)
