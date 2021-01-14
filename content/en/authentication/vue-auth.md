@@ -130,7 +130,7 @@ This form allows a logged-in user to update their password. It works with the Fo
 
 [View file on Github](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/components/VerifyEmail.vue)
 
-Laravel provides the ability for a user to verify their email as an added layer of security. This component works with the /email/verification-notification endpoint. To get the email notification working, there is some set-up required within the Laravel API. More detail in these [instructions](/authentication/laravel-auth#email-verification).
+Laravel provides the ability for a user to verify their email as an added layer of security. This component works with the /email/verification-notification endpoint. To get the email notification working, there is some set up required within the Laravel API. More detail in these [instructions](/authentication/laravel-auth#email-verification).
 
 With this in place, the SPA will check a user is verified using the details in the auth Vuex store. If they are not, a button is displayed, when clicked the verification email will be sent by Laravel. The email will have a link to verify and return the user back to the SPA dashboard.
 

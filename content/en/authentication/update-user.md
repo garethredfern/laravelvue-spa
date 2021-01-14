@@ -10,7 +10,7 @@ Using the Laravel Fortify action `UpdateUserProfileInformation` we can allow a u
 
 ### Setting Up Laravel
 
-There isn’t much set-up required on the Laravel side, just make sure that the `'user/profile-information'` endpoint is added in the paths array of the config/cors.php file.
+There isn’t much set up required on the Laravel side, just make sure that the `'user/profile-information'` endpoint is added in the paths array of the config/cors.php file.
 
 ```js
 'paths' => [

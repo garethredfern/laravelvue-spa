@@ -1,6 +1,6 @@
 ---
 title: "File Uploads Vue"
-description: "Using vue as an SPA. Set-up the ability to upload a users avatar to Digital Ocean Spaces, using the Flysystem in Laravel."
+description: "Using vue as an SPA. Set up the ability to upload a users avatar to Digital Ocean Spaces, using the Flysystem in Laravel."
 position: 11
 category: "File Uploads"
 menuTitle: "File Uploads Vue"
@@ -57,7 +57,7 @@ clearMessage() {
 }
 ```
 
-The fileChange method runs every time a file is selected and it sets the `file` data property to the `event.target.files[0]` which will be a [File object](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#getting_information_on_selected_files).
+The fileChange method runs every time a file is selected, and it sets the `file` data property to the `event.target.files[0]` which will be a [File object](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#getting_information_on_selected_files).
 
 ```js
 fileChange(event) {
@@ -66,7 +66,7 @@ fileChange(event) {
 }
 ```
 
-The `uploadFile` method will create a payload to pass through to the `FileService`. In order to send the file through in the correct format we need to new up an instance of the `FormData` object. The `FormData` object has an `append` method where the file is passed in. See more information how this works over on [MDN](https://developer.mozilla.org/en-US/docs/Web/API/FormData). The payload also has an `endpoint` property which is used to accept the API endpoint that the file will be sent to. We do this so that the `FileUpload` component can be reusable for uploading different files to different API endpoints.
+The `uploadFile` method will create a payload to pass through to the `FileService`. To send the file through in the correct format we need to new up an instance of the `FormData` object. The `FormData` object has an `append` method where the file is passed in. See more information how this works over on [MDN](https://developer.mozilla.org/en-US/docs/Web/API/FormData). The payload also has an `endpoint` property which is used to accept the API endpoint that the file will be sent to. We do this so that the `FileUpload` component can be reusable for uploading different files to different API endpoints.
 
 ```js
 uploadFile() {

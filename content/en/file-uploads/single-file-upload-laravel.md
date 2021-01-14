@@ -1,6 +1,6 @@
 ---
 title: "File Uploads Laravel"
-description: "Set-up the ability to upload a users avatar to Digital Ocean Spaces, using the Flysystem in Laravel."
+description: "Set up the ability to upload a users avatar to Digital Ocean Spaces, using the Flysystem in Laravel."
 position: 10
 category: "File Uploads"
 menuTitle: "File Uploads Laravel"
@@ -14,13 +14,13 @@ sail composer require league/flysystem-aws-s3-v3 ^1.0
 
 ### Digital Ocean Spaces
 
-The example project will use [Digital Ocean Spaces](https://www.digitalocean.com/products/spaces/) to upload the user’s avatar. You can set-up an account for free to test this out. There are a few credentials required that you add in your .env file.
+The example project will use [Digital Ocean Spaces](https://www.digitalocean.com/products/spaces/) to upload the user’s avatar. You can set up an account for free to test this out. There are a few credentials required that you add in your .env file.
 
 1. You will need your key & add to DO_SPACES_KEY
 2. You will need your secret & add to DO_SPACES_SECRET
 3. The endpoint will look similar to this [https://fra1.digitaloceanspaces.com](https://fra1.digitaloceanspaces.com) depending on the region you have chosen (DO_SPACES_ENDPOINT).
 4. The region in this example is `fra1` (DO_SPACES_REGION).
-5. Finally the bucket is the unique name you create when you set-up the space (DO_SPACES_BUCKET).
+5. Finally, the bucket is the unique name you create when you set up the space (DO_SPACES_BUCKET).
 
 Laravel doesn’t come with Digital Ocean configuration out of the box, you can add it into your config/filesystem.php file:
 
@@ -38,7 +38,7 @@ Laravel doesn’t come with Digital Ocean configuration out of the box, you can 
 ]
 ```
 
-### Database Set-up
+### Database Set up
 
 We need to add a column to the users table for the avatar. In the users migration file, within the `up` method add the following:
 
@@ -76,7 +76,7 @@ sail artisan make:controller AvatarController
 
 Add a `store` method to the AvatarController. This method first gets the authenticated user and creates a file path using the `Storage` helper.
 
-The first parameter to the `Storage` method creates a string path where you want to save the file. Digital Ocean will build a folder structure from this `avatars/user-1` as an example. Next the file is retrieved from the request and we set the url to be `public` so that it can be viewed in our application. Finally the full URL to the avatar is saved against the user in the avatar column. Note how we use the `DO_SPACES_PUBLIC` environment variable with the file path.
+The first parameter to the `Storage` method creates a string path where you want to save the file. Digital Ocean will build a folder structure from this `avatars/user-1` as an example. Next the file is retrieved from the request, and we set the url to be `public` so that it can be viewed in our application. Finally, the full URL to the avatar is saved against the user in the avatar column. Note how we use the `DO_SPACES_PUBLIC` environment variable with the file path.
 
 To return the user’s data back in a formatted json response we create a `UserResource`, you can review how resources work [here](https://laravel.com/docs/8.x/eloquent-resources#introduction).
 
@@ -141,4 +141,4 @@ Route::middleware(['auth:sanctum'])->group(function () {
 });
 ```
 
-With all this set-up complete you should be able to [upload an image from your Vue SPA](/file-uploads/single-file-upload-vue) and see it in your Digital Ocean admin area.
+With all this set up complete you should be able to [upload an image from your Vue SPA](/file-uploads/single-file-upload-vue) and see it in your Digital Ocean admin area.

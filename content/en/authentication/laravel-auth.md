@@ -85,7 +85,7 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 
-    // ...
+    //...
 }
 ```
 

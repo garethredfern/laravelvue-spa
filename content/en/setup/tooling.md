@@ -68,7 +68,7 @@ use App\Http\Controllers\TokenController;
 Route::post('/sanctum/token', TokenController::class);
 ```
 
-To log in an receive a token you will need to send your login details and device name in a request using Insomnia or Postman:
+To log in and receive a token you will need to send your login details and device name in a request using Insomnia or Postman:
 
 ```json
 {
@@ -78,7 +78,7 @@ To log in an receive a token you will need to send your login details and device
 }
 ```
 
-Once you have successfully logged in you will need to send the Bearer token with every request to the API. You can save the Bearer token in an environment variable for convenience. [Here’s how to do it with Insomnia](https://stackoverflow.com/questions/54925915/insomnia-using-oath2-0-how-do-i-pull-the-access-token-into-a-variable).
+Once you have successfully logged in, you will need to send the Bearer token with every request to the API. You can save the Bearer token in an environment variable for convenience. [Here’s how to do it with Insomnia](https://stackoverflow.com/questions/54925915/insomnia-using-oath2-0-how-do-i-pull-the-access-token-into-a-variable).
 
 ### Test Endpoints & Request Headers
 
@@ -88,7 +88,7 @@ Make sure to send the `Bearer` token and `Accept: Application JSON` in the heade
 http://localhost/api/users/auth
 ```
 
-If everything has worked you should receive a response like this:
+If everything has worked, you should receive a response like this:
 
 ```json
 {
@@ -103,7 +103,7 @@ If everything has worked you should receive a response like this:
 }
 ```
 
-Additional endpoints can be built then tested in a similar way.
+Additional endpoints can be built then tested similarly.
 
 ### Useful Links
 
