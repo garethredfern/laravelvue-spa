@@ -60,7 +60,7 @@ protected $fillable = [
  ];
 ```
 
-Run the migrations:
+Run the migrations (don’t forget we are using sail) if you are not then swap `sail` for `php`).
 
 ```php
 sail artisan migrate:fresh --seed

@@ -129,7 +129,10 @@ Once you have all the authentication in place, any protected routes will need to
 ```php
 use Illuminate\Http\Request;
 
-Route::middleware('auth:sanctum')->get('/users/{user}', function (Request $request) {
-    return $request->user();
+Route::middleware(['auth:sanctum'])->group(function () {
+  //...
+	Route::get('/users/{user}', function (Request $request) {
+      return $request->user();
+  });
 });
 ```
