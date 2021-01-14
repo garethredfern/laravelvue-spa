@@ -10,13 +10,13 @@ Laravel has a first party package called [Telescope](https://laravel.com/docs/8.
 
 ### Installing Telescope
 
-You can use Composer to install Telescope into your Laravel project. Don’t forget we are using sail, if you are not then swap `sail` for `php`).
+You can use Composer to install Telescope into your Laravel project. Don’t forget we are using Sail, if you are not then swap `sail` for `php`).
 
 ```bash
 sail composer require laravel/telescope
 ```
 
-After installing Telescope, publish its assets using the telescope:install Artisan command. After installing Telescope, you should also run the migrate command in order to create the tables needed to store Telescope's data. Don’t forget we are using sail, if you are not then swap `sail` for `php`).
+After installing Telescope, publish its assets using the telescope:install Artisan command. After installing Telescope, you should also run the migrate command in order to create the tables needed to store Telescope's data. Don’t forget we are using Sail, if you are not then swap `sail` for `php`).
 
 ```bash
 sail artisan telescope:install
