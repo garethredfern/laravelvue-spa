@@ -120,7 +120,7 @@ ResetPassword::createUrlUsing(function ($user, string $token) {
 });
 ```
 
-To make this all work we will need to have a reset-password view in the SPA which handles the token and passes back the users new password. This is explained in [the creating of the SPA article](/authentication/vue-auth), you can review the code on [Github](https://github.com/garethredfern/laravel-vue/blob/main/src/views/ResetPassword.vue).
+To make this all work we will need to have a reset-password view in the SPA which handles the token and passes back the users new password. This is explained, with a link to the component, on the [Vue authentication](/authentication/vue-auth#page-templates-views-and-component-overview) page under the Reset Password View heading.
 
 ### API Routes
 

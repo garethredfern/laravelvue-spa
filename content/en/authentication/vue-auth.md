@@ -1,14 +1,14 @@
 ---
 title: "Authentication - Vue SPA"
-description: "How to set up full authentication using Laravel Sanctum & Fortify in a Vue SPA. Vue SPA documentation."
+description: "How to set up full authentication using Laravel Sanctum and Fortify in a Vue SPA. Vue SPA documentation."
 category: Authentication
 position: 8
 menuTitle: "Vue"
 ---
 
-### Auth Endpoints & CORS
+### Auth Endpoints and CORS
 
-First set up the [Auth Services File](https://github.com/garethredfern/laravel-vue/blob/main/src/services/AuthService.js) to keep all the API Auth endpoints in one place. The methods in this file interact with the Fortify endpoints we have [previously set up](/authentication/laravel-auth#setting-up-fortify). At the top of the file Axios is imported to handle the data fetching from our API.
+First set up the [Auth Services File](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/services/AuthService.js) to keep all the API Auth endpoints in one place. The methods in this file interact with the Fortify endpoints we have [previously set up](/authentication/laravel-auth#setting-up-fortify). At the top of the file Axios is imported to handle the data fetching from our API.
 
 An important note is that you must set the following in the axios create method:
 
@@ -22,7 +22,7 @@ A XMLHttpRequest from a different domain cannot set cookie values for its domain
 It’s important to highlight that this requires the SPA and API to share the same top-level domain. However, they may be placed on different subdomains.
 </alert>
 
-### Sessions, Cookies & CSRF
+### Sessions, Cookies and CSRF
 
 To authenticate your SPA, the login page should first make a request to the `/sanctum/csrf-cookie` endpoint to initialise CSRF protection for the application:
 
@@ -34,9 +34,9 @@ This also applies to any other Fortify actions which require CSRF protection. No
 
 If a login request is successful, the user is authenticated and subsequent requests to the SPA will automatically be authenticated via the session cookie that the Laravel application issues. In addition, since we already made a request to the /sanctum/csrf-cookie route, subsequent requests should automatically receive CSRF protection because Axios automatically sends the XSRF-TOKEN cookie in the X-XSRF-TOKEN header.
 
-### Protecting Routes & Maintaining State
+### Protecting Routes and Maintaining State
 
-The method for protecting your application routes is fairly simple. In the [router](https://github.com/garethredfern/laravel-vue/blob/main/src/router/index.js) file there is a meta field `requiresAuth` it's a boolean held against every route you want to protect. Using the Vue router `beforeEach` method check if a route has a `requiresAuth` boolean of `true` and there is an authenticated user held in [Auth Vuex Store](https://github.com/garethredfern/laravel-vue/blob/main/src/store/modules/auth.js):
+The method for protecting your application routes is fairly simple. In the [router](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/router/index.js) file there is a meta field `requiresAuth` it's a boolean held against every route you want to protect. Using the Vue router `beforeEach` method check if a route has a `requiresAuth` boolean of `true` and there is an authenticated user held in [Auth Vuex Store](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/store/modules/auth.js):
 
 ```js
 router.beforeEach((to, from, next) => {
@@ -80,55 +80,55 @@ authClient.interceptors.response.use(
 );
 ```
 
-### Page Templates (Views) & Component Overview
+### Page Templates (Views) and Component Overview
 
 Here is a breakdown of each of the Vue components and views that are used for handling user authentication, password resets and email verification.
 
 #### Registration Component
 
-[View file on Github](https://github.com/garethredfern/laravel-vue/blob/main/src/components/RegisterForm.vue)
+[View file on Github](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/components/RegisterForm.vue)
 
 The registration component allows users to sign up for an account if they don’t have one. It works with the Fortify /register endpoint. It only works when a user is not logged in, you can’t use it for adding users if you are logged in. To add users through an admin screen we would need to create another API endpoint and alter this component to post to that too. For now, it’s kept simply to register new users. Once a user is registered successfully they are automatically logged in and redirected to the dashboard.
 
 #### Login Component
 
-[View file on Github](https://github.com/garethredfern/laravel-vue/blob/main/src/components/LoginForm.vue)
+[View file on Github](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/components/LoginForm.vue)
 
 The login form works with the Fortify /login endpoint. Notice that all the endpoints are kept in the AuthService file which is imported into each view/component. Once a user logs in successfully, they are redirected to the dashboard.
 
 #### Logout Component
 
-[View file on Github](https://github.com/garethredfern/laravel-vue/blob/main/src/components/Logout.vue)
+[View file on Github](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/components/Logout.vue)
 
 A simple component which works with the Fortify /logout endpoint. When a user is logged out, the `auth/logout` action is dispatched clearing the user from the Vuex state and redirects to the login view.
 
 #### Dashboard View (Protected Route)
 
-[View file on Github](https://github.com/garethredfern/laravel-vue/blob/main/src/views/Dashboard.vue)
+[View file on Github](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/views/Dashboard.vue)
 
 This view has the `requiresAuth` Boolean set true in the router file `meta: { requiresAuth: true }`, it displays the auth user details and a password update component. A dashboard could display much more but the takeaway here is that it is protected. A user must be logged in to see it.
 
 #### Forgot Password View
 
-[View file on Github](https://github.com/garethredfern/laravel-vue/blob/main/src/views/ForgotPassword.vue)
+[View file on Github](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/views/ForgotPassword.vue)
 
 The forgot password view can be accessed if a user is not logged in and needs to reset their password. It works with the Fortify /forgot-password endpoint. Once the form is submitted Laravel will check the email is valid and send out a reset password email. The link in this email will have a token and the URL will point to the reset password view in the SPA.
 
 #### Reset Password View
 
-[View file on Github](https://github.com/garethredfern/laravel-vue/blob/main/src/views/ResetPassword.vue)
+[View file on Github](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/views/ResetPassword.vue)
 
 The reset password view displays a form where a user can change their password. Importantly it will also have access to the token provided by Laravel. It works with the Fortify /reset-password endpoint. When the form is submitted the users email and token are checked by Laravel. If everything was successful, a message is displayed and the user can log in.
 
 #### Update Password Component
 
-[View file on Github](https://github.com/garethredfern/laravel-vue/blob/main/src/components/UpdatePassword.vue)
+[View file on Github](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/components/UpdatePassword.vue)
 
 This form allows a logged-in user to update their password. It works with the Fortify /user/password endpoint.
 
 #### Email Verification
 
-[View file on Github](https://github.com/garethredfern/laravel-vue/blob/main/src/components/VerifyEmail.vue)
+[View file on Github](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/components/VerifyEmail.vue)
 
 Laravel provides the ability for a user to verify their email as an added layer of security. This component works with the /email/verification-notification endpoint. To get the email notification working, there is some set-up required within the Laravel API. More detail in these [instructions](/authentication/laravel-auth#email-verification).
 
@@ -136,6 +136,6 @@ With this in place, the SPA will check a user is verified using the details in t
 
 #### Flash Message Component
 
-[View file on Github](https://github.com/garethredfern/laravel-vue/blob/main/src/components/FlashMessage.vue)
+[View file on Github](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/components/FlashMessage.vue)
 
 While the user is interacting with the API via the SPA we need to give them success and error messages. The Laravel API will be handling a lot of these messages, but we can also use catch try/catch blocks to display messages within the SPA. To keep things all in one place there is a `FlashMessage` component which takes a message and error prop.

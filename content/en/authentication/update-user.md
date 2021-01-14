@@ -35,7 +35,7 @@ The above will be used to send the user details to the Laravel API.
 
 ### The AuthUserForm Component
 
-[View file on Github](https://github.com/garethredfern/laravel-vue/blob/main/src/components/AuthUserForm.vue)
+[View file on Github](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/components/AuthUserForm.vue)
 
 Now let’s focus on the form for updating a users details, starting with the template. We have two input fields, one for the name and one for the email. The input field is actually made from a `BaseInput` component. This component doesn’t do anything different to a normal HTML input field, but it provides a way to keep all the styling consistent and in one place.
 
