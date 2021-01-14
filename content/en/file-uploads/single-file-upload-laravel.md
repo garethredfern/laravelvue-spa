@@ -133,6 +133,8 @@ class UserResource extends JsonResource
 Add the avatar upload endpoint within the sanctum middleware group of your routes/api.php file:
 
 ```php
+use App\Http\Controllers\AvatarController;
+
 Route::middleware(['auth:sanctum'])->group(function () {
     //...
 	Route::post('/users/auth/avatar', [AvatarController::class, 'store']);

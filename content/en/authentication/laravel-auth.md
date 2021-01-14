@@ -127,6 +127,7 @@ To make this all work we will need to have a reset-password view in the SPA whic
 Once you have all the authentication in place, any protected routes will need to use the `auth:sanctum` middleware guard. This will ensure that the user has been authenticated before they can view the requested data from the API. Here is a simple example of what those endpoints would look like.
 
 ```php
+use App\Models\User;
 use Illuminate\Http\Request;
 
 Route::middleware(['auth:sanctum'])->group(function () {
