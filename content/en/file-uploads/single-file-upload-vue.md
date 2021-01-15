@@ -1,7 +1,7 @@
 ---
 title: "File Uploads Vue"
 description: "Using vue as an SPA. Set up the ability to upload a users avatar to Digital Ocean Spaces, using the Flysystem in Laravel."
-position: 11
+position: 12
 category: "File Uploads"
 menuTitle: "File Uploads Vue"
 ---

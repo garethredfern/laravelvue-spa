@@ -1,7 +1,7 @@
 ---
 title: "API Resources - Overview"
 description: "Laravel API resources provide a way to shape the response you send back when a call is made to your API. Let's see how they can be used to serve data to a Vue SPA."
-position: 12
+position: 13
 category: "API"
 menuTitle: "API Resources"
 ---

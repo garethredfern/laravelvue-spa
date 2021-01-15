@@ -1,7 +1,7 @@
 ---
 title: "File Uploads Laravel"
 description: "Set up the ability to upload a users avatar to Digital Ocean Spaces, using the Flysystem in Laravel."
-position: 10
+position: 11
 category: "File Uploads"
 menuTitle: "File Uploads Laravel"
 ---

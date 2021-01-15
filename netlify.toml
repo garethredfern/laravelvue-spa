@@ -21,3 +21,13 @@
   to = "/authentication/vue-auth"
   status = 301
   force = true
+[[redirects]]
+  from = "/authentication/laravel-auth"
+  to = "/authentication/laravel-authentication"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/authentication/vue-auth"
+  to = "/authentication/vue-authentication"
+  status = 301
+  force = true
