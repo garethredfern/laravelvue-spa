@@ -78,7 +78,7 @@ Add a `store` method to the AvatarController. This method first gets the authent
 
 The first parameter to the `Storage` method creates a string path where you want to save the file. Digital Ocean will build a folder structure from this `avatars/user-1` as an example. Next the file is retrieved from the request, and we set the url to be `public` so that it can be viewed in our application. Finally, the full URL to the avatar is saved against the user in the avatar column. Note how we use the `DO_SPACES_PUBLIC` environment variable with the file path.
 
-To return the user’s data back in a formatted json response we create a `UserResource`, you can review how resources work [here](https://laravel.com/docs/8.x/eloquent-resources#introduction).
+To return the user’s data back in a formatted json response we create a `UserResource`, you can review how resources work [here](/api-resources-overview).
 
 ```php
 namespace App\Http\Controllers;
