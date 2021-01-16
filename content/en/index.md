@@ -22,4 +22,6 @@ To see what you will be building, create an account at [laravelvuespa.app](https
 
 I want to keep growing this resource and provide a full set of documentation/videos on how to build Vue & Nuxt SPA's with a Laravel API. The plan is to release weekly updates until all areas of building an API and SPA are covered.
 
+**If you have found this project useful, please consider giving it a star on [Github](https://github.com/garethredfern/laravelvue-spa).**
+
 <iframe src="https://github.com/sponsors/garethredfern/button" title="Sponsor garethredfern" height="35" width="116" style="border: 0;"></iframe>
