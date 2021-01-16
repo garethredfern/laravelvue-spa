@@ -76,7 +76,11 @@ sail artisan make:controller AvatarController
 
 Add a `store` method to the AvatarController. This method first gets the authenticated user and creates a file path using the `Storage` helper.
 
-The first parameter to the `Storage` method creates a string path where you want to save the file. Digital Ocean will build a folder structure from this `avatars/user-1` as an example. Next the file is retrieved from the request, and we set the url to be `public` so that it can be viewed in our application. Finally, the full URL to the avatar is saved against the user in the avatar column. Note how we use the `DO_SPACES_PUBLIC` environment variable with the file path.
+The first parameter to the `Storage` method creates a string path where you want to save the file. Digital Ocean will build a folder structure from this `avatars/user-1` as an example. Next the file is retrieved from the request, and we set the url to be `public` so that it can be viewed in our application. Finally, the full URL to the avatar is saved against the user in the avatar column. Note how we use the `DO_SPACES_PUBLIC` environment variable with the file path. Make sure to have a trailing slash at the end of your URL:
+
+```bash
+DO_SPACES_PUBLIC=https://laravel-api.fra1.digitaloceanspaces.com/
+```
 
 To return the user’s data back in a formatted json response we create a `UserResource`, you can review how resources work [here](/api-resources-overview).
 
