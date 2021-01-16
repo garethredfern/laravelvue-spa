@@ -36,7 +36,7 @@ If a login request is successful, the user is authenticated and subsequent reque
 
 ### Protecting Routes and Maintaining State
 
-The method for protecting your application routes is fairly simple. In the [router](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/router/index.js) file there is a meta field `requiresAuth` it's a boolean held against every route you want to protect. Using the Vue router `beforeEach` method check if a route has a `requiresAuth` boolean of `true` and there is an authenticated user held in [Auth Vuex Store](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/store/modules/auth.js):
+The method for protecting your application routes is fairly simple. In the [router](https://github.com/garethredfern/laravel-vue/blob/v1.2.6/src/router/index.js) file there is a meta field `requiresAuth` it's a boolean held against every route you want to protect. Using the Vue router `beforeEach` method check if a route has a `requiresAuth` boolean of `true` and there is an authenticated user held in [Auth Vuex Store](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/store/modules/auth.js):
 
 ```js
 router.beforeEach((to, from, next) => {
