@@ -77,12 +77,17 @@ uploadFile() {
   payload.endpoint = this.endpoint;
   this.clearMessage();
   FileService.uploadFile(payload)
-    .then(() => (this.message = "File uploaded."))
-    .catch((error) => (this.error = getError(error)));
+  .then(() => {
+    this.message = "File uploaded.";
+    this.$emit("fileUploaded");
+  })
+  .catch((error) => (this.error = getError(error)));
 }
 ```
 
-With the `FileUpload` component built all that's left to do is add it into the [User view](https://github.com/garethredfern/laravel-vue/blob/v1.2.1/src/views/User.vue) we previously created.
+Notice in the `then` method on the `FileService.uploadFile` we emit an event called `fileUploaded`, this enables us to listen for when the file has been uploaded in the parent component. The listener provides other functionality, we will use it to update the users profile page without them needing to refresh the page.
+
+With the `FileUpload` component built all that's left to do is add it into the [User view](https://github.com/garethredfern/laravel-vue/blob/v1.2.5/src/views/User.vue) we previously created.
 
 ```js
 <template>
@@ -91,6 +96,7 @@ With the `FileUpload` component built all that's left to do is add it into the [
     label="Upload Avatar"
     :fileTypes="['image/*']"
     endpoint="/users/auth/avatar"
+    @fileUploaded="updateUser"
     class="p-5 bg-white border rounded shadow"
   />
 </template>
@@ -100,6 +106,11 @@ With the `FileUpload` component built all that's left to do is add it into the [
     //...
     components: {
       FlashMessage,
+    },
+    methods: {
+      updateUser() {
+        this.$store.dispatch("auth/getAuthUser");
+      }
     }
   }
 </script>
