@@ -96,7 +96,7 @@ class AvatarController extends Controller
       try {
           $user = Auth::user();
           $filePath = Storage::disk('spaces')
-              ->putFile('avatars/user-'.$user->id, $request->file, 'public');
+              ->putFile('/avatars/user-'.$user->id, $request->file, 'public');
           $user->avatar = env('DO_SPACES_PUBLIC').$filePath;
           $user->save();
       } catch (Exception $exception) {
