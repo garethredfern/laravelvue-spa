@@ -3,7 +3,7 @@ title: "Authentication - Vue SPA"
 description: "How to set up full authentication using Laravel Sanctum and Fortify in a Vue SPA. Vue SPA documentation."
 category: Authentication
 position: 8
-menuTitle: "Vue"
+menuTitle: "Vue Authentication"
 ---
 
 ### Auth Endpoints and CORS
