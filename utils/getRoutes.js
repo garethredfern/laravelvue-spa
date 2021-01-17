@@ -9,6 +9,9 @@ export default async () => {
   const fileUploads = await $content("en/file-uploads")
     .only(["path"])
     .fetch();
+  const examples = await $content("en/examples")
+    .only(["path"])
+    .fetch();
   const setup = await $content("en/setup")
     .only(["path"])
     .fetch();
@@ -21,6 +24,7 @@ export default async () => {
     .concat(...authentication.map((x) => x.path.substring(3)))
     .concat(...authorization.map((x) => x.path.substring(3)))
     .concat(...fileUploads.map((x) => x.path.substring(3)))
+    .concat(...examples.map((x) => x.path.substring(3)))
     .concat(...setup.map((x) => x.path.substring(3)))
     .concat(
       ...en.map((x) => x.path.substring(3)).filter((x) => x !== "/index")

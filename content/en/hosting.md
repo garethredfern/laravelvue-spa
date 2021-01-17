@@ -1,6 +1,6 @@
 ---
 title: "Hosting & Going Live"
-description: "An overview of what is needed to publish your Vue Spa on Netlify and host the API via Laravel Forge"
+description: "An overview of what is needed to publish your Vue Spa on Netlify and host the API via Laravel Forge."
 position: 14
 category: "Hosting"
 menuTitle: "Hosting Set up"
