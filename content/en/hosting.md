@@ -10,7 +10,7 @@ Once you are ready to go live with your site, there are a few steps you will nee
 
 ### Forge
 
-Create a new server in the admin panel of Forge and make sure you have added your SSH key for your local machine. Once a server is provisioned, you will want to delete the default site and create a new site called `api.yourappname.com`. As an example, the demo site for this site is called `api.laravelvuespa.app`. Hook it up to deploy from your Github account and make sure to select Let’s Encrypt to add the SSL certificate so that the domain runs on https.
+Create a new server in the admin panel of Forge and make sure you have added your SSH key for your local machine. Once a server is provisioned, you will want to delete the default site and create a new site called `api.yourappname.com`. As an example, the demo site for this site is called `api.laravelvuespa.app`. Hook it up to deploy from your GitHub account and make sure to select Let’s Encrypt to add the SSL certificate so that the domain runs on https.
 
 ### Configure Environment Variables
 
@@ -45,7 +45,7 @@ If you have your SSH key set up in Forge and added to your server you can connec
 
 ### Netlify
 
-Netlify will be used to host the main SPA and control the DNS for both the API and SPA. It’s free to set up an account and host a starter project. Once you are logged in click on the “New site from Git” button and link up your repository from Github. Follow the 3 step on screen instructions and when you get to the basic build settings make sure you click on “show advanced”, add a new variable:
+Netlify will be used to host the main SPA and control the DNS for both the API and SPA. It’s free to set up an account and host a starter project. Once you are logged in click on the “New site from Git” button and link up your repository from GitHub. Follow the 3 step on screen instructions and when you get to the basic build settings make sure you click on “show advanced”, add a new variable:
 
 ![](https://res.cloudinary.com/redfern-web/image/upload/v1610348790/laravelvue-spa/netlify-env.png)
 

@@ -83,49 +83,49 @@ Here is a breakdown of each of the Vue components and views that are used for ha
 
 #### Registration Component
 
-[View file on Github](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/components/RegisterForm.vue)
+[View file on GitHub](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/components/RegisterForm.vue)
 
 The registration component allows users to sign up for an account if they don’t have one. It works with the Fortify /register endpoint. It only works when a user is not logged in, you can’t use it for adding users if you are logged in. To add users through an admin screen we would need to create another API endpoint and alter this component to post to that too. For now, it’s kept simply to register new users. Once a user is registered successfully they are automatically logged in and redirected to the dashboard.
 
 #### Login Component
 
-[View file on Github](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/components/LoginForm.vue)
+[View file on GitHub](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/components/LoginForm.vue)
 
 The login form works with the Fortify /login endpoint. Notice that all the endpoints are kept in the AuthService file which is imported into each view/component. Once a user logs in successfully, they are redirected to the dashboard.
 
 #### Logout Component
 
-[View file on Github](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/components/Logout.vue)
+[View file on GitHub](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/components/Logout.vue)
 
 A simple component which works with the Fortify /logout endpoint. When a user is logged out, the `auth/logout` action is dispatched clearing the user from the Vuex state and redirects to the login view.
 
 #### Dashboard View (Protected Route)
 
-[View file on Github](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/views/Dashboard.vue)
+[View file on GitHub](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/views/Dashboard.vue)
 
 This view has the `requiresAuth` Boolean set true in the router file `meta: { requiresAuth: true }`, it displays the auth user details and a password update component. A dashboard could display much more but the takeaway here is that it is protected. A user must be logged in to see it.
 
 #### Forgot Password View
 
-[View file on Github](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/views/ForgotPassword.vue)
+[View file on GitHub](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/views/ForgotPassword.vue)
 
 The forgot password view can be accessed if a user is not logged in and needs to reset their password. It works with the Fortify /forgot-password endpoint. Once the form is submitted Laravel will check the email is valid and send out a reset password email. The link in this email will have a token and the URL will point to the reset password view in the SPA.
 
 #### Reset Password View
 
-[View file on Github](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/views/ResetPassword.vue)
+[View file on GitHub](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/views/ResetPassword.vue)
 
 The reset password view displays a form where a user can change their password. Importantly it will also have access to the token provided by Laravel. It works with the Fortify /reset-password endpoint. When the form is submitted the users email and token are checked by Laravel. If everything was successful, a message is displayed and the user can log in.
 
 #### Update Password Component
 
-[View file on Github](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/components/UpdatePassword.vue)
+[View file on GitHub](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/components/UpdatePassword.vue)
 
 This form allows a logged-in user to update their password. It works with the Fortify /user/password endpoint.
 
 #### Email Verification
 
-[View file on Github](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/components/VerifyEmail.vue)
+[View file on GitHub](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/components/VerifyEmail.vue)
 
 Laravel provides the ability for a user to verify their email as an added layer of security. This component works with the /email/verification-notification endpoint. To get the email notification working, there is some set up required within the Laravel API. More detail in these [instructions](/authentication/laravel-authentication#email-verification).
 
@@ -133,6 +133,6 @@ With this in place, the SPA will check a user is verified using the details in t
 
 #### Flash Message Component
 
-[View file on Github](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/components/FlashMessage.vue)
+[View file on GitHub](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/components/FlashMessage.vue)
 
 While the user is interacting with the API via the SPA we need to give them success and error messages. The Laravel API will be handling a lot of these messages, but we can also use catch try/catch blocks to display messages within the SPA. To keep things all in one place there is a `FlashMessage` component which takes a message and error prop.

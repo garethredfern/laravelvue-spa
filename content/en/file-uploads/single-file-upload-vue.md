@@ -22,7 +22,7 @@ export default {
 };
 ```
 
-Create a FileUpload component that can be used to upload any single file. The full component can be found in the [Github repo](https://github.com/garethredfern/laravel-vue/blob/v1.2.1/src/components/FileUpload.vue), let’s break it down.
+Create a FileUpload component that can be used to upload any single file. The full component can be found in the [GitHub repo](https://github.com/garethredfern/laravel-vue/blob/v1.2.1/src/components/FileUpload.vue), let’s break it down.
 
 ### File Input
 

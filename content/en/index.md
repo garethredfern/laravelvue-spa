@@ -13,7 +13,7 @@ If you are wanting to go down the route of having a completely separate SPA that
 
 If you would like to hear an excellent explanation from Taylor on the how Sanctum and Fortify came about I highly recommend listening to his [podcast episode](https://blog.laravel.com/laravel-snippet-25-ecosystem-discussion-auth-recap-passport-sanctum).
 
-The example project files can be found on Github:
+The example project files can be found on GitHub:
 
 - [Larvel API](https://github.com/garethredfern/laravel-api)
 - [Vue SPA](https://github.com/garethredfern/laravel-vue)
@@ -22,12 +22,12 @@ To see what you will be building, create an account at [laravelvuespa.app](https
 
 ### Questions
 
-If you have any questions please feel free to [start a discussion](https://github.com/garethredfern/laravelvue-spa/discussions) over on Github.
+If you have any questions please feel free to [start a discussion](https://github.com/garethredfern/laravelvue-spa/discussions) over on GitHub.
 
 ### Help to Grow
 
 I want to keep growing this resource and provide a full set of documentation/videos on how to build Vue & Nuxt SPA's with a Laravel API. The plan is to release weekly updates until all areas of building an API and SPA are covered.
 
-**If you have found this project useful, please consider giving it a star on [Github](https://github.com/garethredfern/laravelvue-spa).**
+**If you have found this project useful, please consider giving it a star on [GitHub](https://github.com/garethredfern/laravelvue-spa).**
 
 <iframe src="https://github.com/sponsors/garethredfern/button" title="Sponsor garethredfern" height="35" width="116" style="border: 0;"></iframe>
