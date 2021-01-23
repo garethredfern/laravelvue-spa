@@ -286,7 +286,7 @@ There are four buttons in total (first, previous, next, last), they all follow t
 }
 ```
 
-When the user clicks on the first page button the action prop is called (`user/paginateUsers`) the action is passed the link that the Laravel API provides for the first page using `this.links.first`. If a `path` prop has been passed in to the `BasePagination` component then the router updates the page with a query parameter `?page=1`. If no `path` prop is passed in then the next page is still fetched but the router does not update the URL. This maybe desired in some situations.
+When the user clicks on the first page button the action prop is called (user/paginateUsers) the action is passed the link that the Laravel API provides for the first page using `this.links.first`. If a `path` prop has been passed in to the `BasePagination` component then the router updates the page with a query parameter `?page=1`. If no `path` prop is passed in then the next page is still fetched but the router does not update the URL. This maybe desired in some situations.
 
 A similar process is followed for the other pagination links. Take a look at the full component [on GitHub](https://github.com/garethredfern/laravel-vue/blob/v1.3.7/src/components/BasePagination.vue).
 
