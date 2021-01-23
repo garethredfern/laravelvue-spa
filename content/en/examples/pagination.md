@@ -235,13 +235,13 @@ Inside the `beforeRouteEnter` hook we get the current page number from the query
 
 With this in place, when the view loads the first page of users will be added into the Vuex store, and they can then be looped though within the Users template.
 
-Take a look at the complete template code [on GitHub](https://github.com/garethredfern/laravel-vue/blob/v1.3.6/src/views/Users.vue).
+Take a look at the complete template code [on GitHub](https://github.com/garethredfern/laravel-vue/blob/v1.3.7/src/views/Users.vue).
 
 ### Paginate Component
 
 The final part of the paginated `Users` template is to create the navigation to paginate between pages of users. To achieve this, we will create a `BasePagination` component. This component will be re-usable and not specific to just paginating users. It can be used to paginate any paginated list we get back from the Laravel API.
 
-The complete `BasePagination` component can be seen [on GitHub](https://github.com/garethredfern/laravel-vue/blob/v1.3.6/src/components/BasePagination.vue).
+The complete `BasePagination` component can be seen [on GitHub](https://github.com/garethredfern/laravel-vue/blob/v1.3.7/src/components/BasePagination.vue).
 First, pass in the props:
 
 - `action`: is the Vuex action we want to call (`user/paginateUsers` in this example).
@@ -274,17 +274,21 @@ There are four buttons in total (first, previous, next, last), they all follow t
  methods: {
   firstPage() {
     this.$store.dispatch(this.action, this.links.first).then(() => {
-      this.$router.push({
-        path: this.path,
-        query: { page: 1 },
-      });
+      if (this.path) {
+        this.$router.push({
+          path: this.path,
+          query: { page: 1 },
+        });
+      }
     });
-  }
+  },
   //...
 }
 ```
 
-When the user clicks on the first page button the action prop is called (`user/paginateUsers`) the action is passed the link that the Laravel API gives us for the first page using `this.links.first`. Finally, the router then updates the page with a query parameter `?page=1`. A similar process is followed for the other pagination links. Take a look at the full component [on GitHub](https://github.com/garethredfern/laravel-vue/blob/v1.3.6/src/components/BasePagination.vue).
+When the user clicks on the first page button the action prop is called (`user/paginateUsers`) the action is passed the link that the Laravel API provides for the first page using `this.links.first`. If a `path` prop has been passed in to the `BasePagination` component then the router updates the page with a query parameter `?page=1`. If no `path` prop is passed in then the next page is still fetched but the router does not update the URL. This maybe desired in some situations.
+
+A similar process is followed for the other pagination links. Take a look at the full component [on GitHub](https://github.com/garethredfern/laravel-vue/blob/v1.3.7/src/components/BasePagination.vue).
 
 ### Conclusion
 
