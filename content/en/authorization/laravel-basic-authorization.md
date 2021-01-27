@@ -92,7 +92,7 @@ With the above code in place any time you want to check if a user is an admin in
 export const getters = {
   //...
   isAdmin: (state) => {
-    return state.user.isAdmin;
+    return state.user ? state.user.isAdmin : false;
   },
 };
 ```
