@@ -8,7 +8,7 @@ menuTitle: "Basic Authorization"
 
 ## Basic Authorization - Laravel API
 
-While authentication determines if a user has access to your application, authorization determines what they can see when they are logged in. Authoization can be as simple or as complex as you need it to be. Often you will have user roles with permissions assigned to them. A role or maybe multiple roles are then assigned to a user.
+While authentication determines if a user has access to your application, authorization determines what they can see when they are logged in. Authorization can be as simple or as complex as you need it to be. Often you will have user roles with permissions assigned to them. A role or maybe multiple roles are then assigned to a user.
 
 ### Add a Column to the User Table
 
