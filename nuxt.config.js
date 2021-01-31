@@ -6,6 +6,9 @@ export default theme({
     primaryColor: "#d53f8c",
   },
   head: {
+    htmlAttrs: {
+      lang: "en-GB",
+    },
     script: [
       {
         async: true,
