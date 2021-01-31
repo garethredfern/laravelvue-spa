@@ -28,10 +28,10 @@ export default function guest({ next, store }) {
 To add this middleware to any route simply import it into your router/index.js file:
 
 ```js
-import auth from "@/middleware/auth";
+import guest from "@/middleware/guest";
 ```
 
-Finally add the auth method as a middleware router parameter on the meta property:
+Finally add the guest method as a middleware router parameter on the meta property:
 
 ```js
 {

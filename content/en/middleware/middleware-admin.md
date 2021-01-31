@@ -18,10 +18,10 @@ export default function admin({ next, store }) {
 To add this middleware to any route simply import it into your router/index.js file:
 
 ```js
-import auth from "@/middleware/admin";
+import admin from "@/middleware/admin";
 ```
 
-Finally add the auth method as a middleware router parameter on the meta property:
+Finally add the admin method as a middleware router parameter on the meta property:
 
 ```js
 {
