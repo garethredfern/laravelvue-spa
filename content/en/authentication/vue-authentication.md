@@ -8,7 +8,7 @@ menuTitle: "Vue Authentication"
 
 ### Auth Endpoints and CORS
 
-First set up the [Auth Services File](https://github.com/garethredfern/laravel-vue/blob/v1.1.2/src/services/AuthService.js) to keep all the API Auth endpoints in one place. The methods in this file interact with the Fortify endpoints we have [previously set up](/authentication/laravel-authentication#setting-up-fortify). At the top of the file Axios is imported to handle the data fetching from our API.
+First set up the [Auth Services File](https://github.com/garethredfern/laravel-vue/blob/v1.6.1/src/services/AuthService.js) to keep all the API Auth endpoints in one place. The methods in this file interact with the Fortify endpoints we have [previously set up](/authentication/laravel-authentication#setting-up-fortify). At the top of the file Axios is imported to handle the data fetching from our API.
 
 An important note is that you must set the following in the axios create method:
 
