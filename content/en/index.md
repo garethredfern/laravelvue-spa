@@ -18,8 +18,6 @@ The example project files can be found on GitHub:
 - [Larvel API](https://github.com/garethredfern/laravel-api)
 - [Vue SPA](https://github.com/garethredfern/laravel-vue)
 
-To see what you will be building, create an account at [laravelvuespa.app](https://laravelvuespa.app/) where you can play around with the demo application.
-
 ### Questions
 
 If you have any questions please feel free to [start a discussion](https://github.com/garethredfern/laravelvue-spa/discussions) over on GitHub.

@@ -7,4 +7,11 @@ menuTitle: "Demo App"
 fullscreen: true
 ---
 
-To see what you will be building, create an account at [laravelvuespa.app](https://laravelvuespa.app/) where you can play around with the demo application.
+To see what you will be building, you will need to install the Laravel API and the Vue Spa locally.
+
+The instructions to set the local projects up can be found here:
+
+- [laravel-setup](/setup/laravel-setup)
+- [vue-setup](/setup/vue-setup)
+
+Once you have everything installed locally you can create an account and login to see the demo.

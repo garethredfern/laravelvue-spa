@@ -10,18 +10,18 @@ Once you are ready to go live with your site, there are a few steps you will nee
 
 ### Forge
 
-Create a new server in the admin panel of Forge and make sure you have added your SSH key for your local machine. Once a server is provisioned, you will want to delete the default site and create a new site called `api.yourappname.com`. As an example, the demo site for this site is called `api.laravelvuespa.app`. Hook it up to deploy from your GitHub account and make sure to select Let’s Encrypt to add the SSL certificate so that the domain runs on https.
+Create a new server in the admin panel of Forge and make sure you have added your SSH key for your local machine. Once a server is provisioned, you will want to delete the default site and create a new site called `api.yourappname.com`. Hook it up to deploy from your GitHub account and make sure to select Let’s Encrypt to add the SSL certificate so that the domain runs on https.
 
 ### Configure Environment Variables
 
 In your Forge .env file (editable via the control panel) make sure to add/change the following variables. Obviously, change out the url to your own.
 
-**It’s critical you add these otherwise sessions and Sanctum will not work.** Also note the period `.laravelvuespa.app` before the domain name, this allows for the API to run on a subdomain and still have sessions work.
+**It’s critical you add these otherwise sessions and Sanctum will not work.** Also note the period `.yourappname.com` before the domain name, this allows for the API to run on a subdomain and still have sessions work.
 
 ```bash
-SANCTUM_STATEFUL_DOMAINS=laravelvuespa.app
-SESSION_DOMAIN=.laravelvuespa.app
-SPA_URL=https://laravelvuespa.app
+SANCTUM_STATEFUL_DOMAINS=yourappname.com
+SESSION_DOMAIN=.yourappname.com
+SPA_URL=https://yourappname.com
 ```
 
 While you are in the .env file add a mail provider, here is an example of setting up [Mailgun](https://www.mailgun.com/).
@@ -33,7 +33,7 @@ MAIL_PORT=587
 MAIL_USERNAME=addyourusername
 MAIL_PASSWORD=addyourpassword
 MAIL_ENCRYPTION=null
-MAIL_FROM_ADDRESS=info@laravelvuespa.app
+MAIL_FROM_ADDRESS=info@yourappname.com
 MAIL_FROM_NAME="${APP_NAME}"
 ```
 
