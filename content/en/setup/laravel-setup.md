@@ -72,7 +72,7 @@ Add Sanctum's middleware to your api middleware group within your application's 
 The full documentation can be found on the [Laravel website](https://laravel.com/docs/8.x/fortify).
 
 ```bash
-sail composer require laravel/fortify
+composer require laravel/fortify
 
 sail artisan vendor:publish --provider="Laravel\Fortify\FortifyServiceProvider"
 ```
