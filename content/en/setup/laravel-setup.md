@@ -33,6 +33,7 @@ You need to use the sail command to enable artisan to run within the Docker cont
 Example of running a migration:
 
 ```bash
+sail up -d
 sail artisan migrate
 ```
 
