@@ -41,7 +41,7 @@ sail artisan migrate
 The full documentation can be found on the [Laravel website](https://laravel.com/docs/8.x/sanctum).
 
 ```bash
-sail composer require laravel/sanctum
+composer require laravel/sanctum
 
 sail artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
 ```
