@@ -58,7 +58,7 @@ class TokenController extends Controller
 }
 ```
 
-### Token API Endpoint
+### Token API Endpoint & Controller
 
 In your api routes file add the endpoint used to fetch a token:
 
@@ -67,6 +67,67 @@ use App\Http\Controllers\TokenController;
 
 Route::post('/sanctum/token', TokenController::class);
 ```
+
+Create a `TokenController` which will include the following code:
+```php
+namespace App\Http\Controllers;
+
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
+
+class TokenController extends Controller
+{
+    public function __invoke(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+            'device_name' => 'required',
+        ]);
+
+        $user = User::where('email', $request->email)->first();
+
+        if (!$user || !Hash::check($request->password, $user->password)) {
+            throw ValidationException::withMessages([
+                'email' => ['The provided credentials are incorrect.'],
+            ]);
+        }
+
+        $token = $user->createToken($request->device_name)->plainTextToken;
+
+        return response()->json(['token' => $token], 200);
+    }
+}
+```
+
+### Basic API Route & Controller
+Add the following to your api routes file:
+```php
+use App\Http\Controllers\AuthController;
+
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::get('/users/auth', AuthController::class);
+});
+```
+
+Create an `AuthController` which will include the following code:
+```php
+namespace App\Http\Controllers;
+
+use App\Http\Resources\UserResource;
+use Illuminate\Support\Facades\Auth;
+
+class AuthController extends Controller
+{
+    public function __invoke()
+    {
+        return new UserResource(Auth::user());
+    }
+}
+```
+The AuthController uses a `UserResource` this is just a handy way to send json in the format you require, for more information review the [API resources](/api-resources-overview) section.
 
 To log in and receive a token you will need to send your login details and device name in a request using Insomnia or Postman:
 
