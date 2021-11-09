@@ -22,6 +22,14 @@ The example project files can be found on GitHub:
 
 If you have any questions please feel free to [start a discussion](https://github.com/garethredfern/laravelvue-spa/discussions) over on GitHub.
 
+### Further Learning
+[Codecourse](https://codecourse.com/) provides some excellent video tutorials on the subjects covered on this site and I highly recommend you take a look at the following:
+
+- [Laravel Sanctum Authentication with the Vue Composition API](https://codecourse.com/courses/laravel-sanctum-authentication-with-the-vue-composition-api)
+- [Vue Middleware Pipelines](https://codecourse.com/courses/create-vue-middleware-pipelines)
+- [Laravel Sanctum (Airlock) with Vue](https://codecourse.com/courses/laravel-airlock-with-vue)
+- [Laravel Sanctum (Airlock) with Postman](https://codecourse.com/courses/laravel-sanctum-airlock-with-postman)
+
 ### Help to Grow
 
 I want to keep growing this resource and provide a full set of documentation/videos on how to build Vue & Nuxt SPA's with a Laravel API. The plan is to release weekly updates until all areas of building an API and SPA are covered.
