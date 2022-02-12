@@ -8,7 +8,7 @@ menuTitle: "Tooling"
 
 To test the API whilst building all its endpoints and data fetching functionality, you can use either [Insomnia](https://insomnia.rest/) or [Postman](https://www.postman.com/). Both tools allow you to interact with your API endpoints whilst saving the necessary authentication token.
 
-Both Insomnia and Postman should enable you to interact with Sanctum using cookies and sessions in the same way as the SPA does. It is much simpler to create a token endpoint which returns a Bearer token to use whilst interacting with the API locally. **Do not use this method authenticating your SPA** cookies and sessions are the preferred and more secure method in production. For testing locally a Bearer token is nice and simple and works well.
+Both Insomnia and Postman should enable you to interact with Sanctum using cookies and sessions in the same way as the SPA does. However, it is much simpler to create a token endpoint, which returns a Bearer token to use whilst interacting with the API locally. **Do not use this method authenticating your SPA** cookies and sessions are the preferred and more secure method in production. For testing locally a Bearer token is nice and simple and works well.
 
 ### Add HasApiTokens Trait to User Model
 
@@ -25,11 +25,14 @@ class User extends Authenticatable
 
 ### Token Controller
 
-Create a `TokenController` either using the artisan command or by creating the file manually. The code to generate the token is taken directly from the [Sanctum documentation](https://laravel.com/docs/8.x/sanctum#issuing-mobile-api-tokens) accept returning a json response with the token set in a token variable.
+Create a `TokenController` either using the artisan command or by creating the file manually. The code to generate the token is adapted from the [Sanctum documentation](https://laravel.com/docs/9.x/sanctum#issuing-mobile-api-tokens) accept returning a json response with the token set in a token variable.
 
 ```php
+namespace App\Http\Controllers\Auth;
+
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 

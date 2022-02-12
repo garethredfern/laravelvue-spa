@@ -6,19 +6,7 @@ category: "Getting Started"
 menuTitle: "Setup Laravel"
 ---
 
-First, set up the Laravel API as you normally would. Here we are using [Laravel Sail](https://laravel.com/docs/8.x/sail). If you choose to run Laravel via Sail, your API will be accessible via `http://localhost`.
-
-Make sure you change the following in your .env file:
-
-```bash
-DB_HOST=127.0.0.1
-```
-
-To this:
-
-```bash
-DB_HOST=mysql
-```
+First, set up the Laravel API as you normally would. Here we are using [Laravel Sail](https://laravel.com/docs/9.x/sail). If you choose to run Laravel via Sail, your API will be accessible via `http://localhost`.
 
 Add a sender address in the `.env` so that email can be sent.
 
@@ -37,55 +25,26 @@ sail up -d
 sail artisan migrate
 ```
 
-### Install Sanctum
+### Install Laravel Breeze
 
-The full documentation can be found on the [Laravel website](https://laravel.com/docs/8.x/sanctum).
+Laravel Breeze can scaffold an authentication API that is ready to authenticate modern JavaScript applications. To get started, specify the api stack as your desired stack when executing the breeze:install Artisan command:
 
 ```bash
-composer require laravel/sanctum
+composer require laravel/breeze --dev
 
-sail artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+sail artisan breeze:install api
+
+sail artisan migrate
 ```
 
-Sanctum needs some specific set up to enable it to work with a separate SPA. First lets add the following in your .env file:
+Breeze needs some specific set up to enable it to work with a separate SPA. First lets add the following in your .env file:
 
 ```bash
 SANCTUM_STATEFUL_DOMAINS=localhost:8080
-SPA_URL=http://localhost:8080
 SESSION_DOMAIN=localhost
 ```
 
-The stateful domain tells Sanctum which domain you are using for the SPA. You can find the full notes and config for this in the config/sanctum.php file. As we are using cookies and sessions for authentication you need to add a session domain. This determines which domain the cookie is available to in your application. Full notes can be found in the config/session.php file and the [official documentation](https://laravel.com/docs/8.x/sanctum#spa-authentication).
-
-Add Sanctum's middleware to your api middleware group within your application's app/Http/Kernel.php file:
-
-```php
-'api' => [
-    \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
-    'throttle:api',
-    \Illuminate\Routing\Middleware\SubstituteBindings::class,
-],
-```
-
-### Install Fortify
-
-The full documentation can be found on the [Laravel website](https://laravel.com/docs/8.x/fortify).
-
-```bash
-composer require laravel/fortify
-
-sail artisan vendor:publish --provider="Laravel\Fortify\FortifyServiceProvider"
-```
-
-Ensure the FortifyServiceProvider class is registered within the providers array of your application's config/app.php file.
-
-```php
-/*
- * Application Service Providers...
- */
-
-App\Providers\FortifyServiceProvider::class,
-```
+During installation, Breeze will add a FRONTEND_URL environment variable to your application's `.env` file. This URL should be the URL of your JavaScript application. This will typically be `http://localhost:3000` during local development. In addition, you should ensure that your `APP_URL` is set to `http://localhost`, which is the default URL used by Sail for the Laravel API.
 
 ### Database Seeding
 

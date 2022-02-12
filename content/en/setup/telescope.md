@@ -6,7 +6,7 @@ category: "Getting Started"
 menuTitle: "Telescope"
 ---
 
-Laravel has a first party package called [Telescope](https://laravel.com/docs/8.x/telescope). It provides insight into the requests coming into your application, exceptions, log entries, and a lot more. For any Laravel development you will find it an essential tool to have in your belt.
+Laravel has a first party package called [Telescope](https://laravel.com/docs/9.x/telescope). It provides insight into the requests coming into your application, exceptions, log entries, and a lot more. For any Laravel development you will find it an essential tool to have in your belt.
 
 ### Installing Telescope
 
@@ -24,8 +24,8 @@ sail artisan telescope:install
 sail artisan migrate
 ```
 
-Once you have installed Telescope visit the API url /telescope, if you have set your site up following the setup instructions using Sail then visit http://localhost/telescope in your browser. You will now be able to use it in parallel with [Insomnia or Postman](/setup/tooling). Every request that goes into your API will be recorded and you can see useful information to help with debugging. Here's and example of viewing a request and its associated response in the telescope control panel.
+Once you have installed Telescope visit the API url `/telescope`, if you have set your site up following the setup instructions using Sail then visit `http://localhost/telescope` in your browser. You will now be able to use it in parallel with [Insomnia or Postman](/setup/tooling). Every request that goes into your API will be recorded and you can see useful information to help with debugging. Here's and example of viewing a request and its associated response in the telescope control panel.
 
 ![](https://res.cloudinary.com/redfern-web/image/upload/v1610184996/laravelvue-spa/telescope.gif)
 
-For further reading on what telescope can do take a look at the [documentation](https://laravel.com/docs/8.x/telescope).
+For further reading on what telescope can do take a look at the [documentation](https://laravel.com/docs/9.x/telescope).
